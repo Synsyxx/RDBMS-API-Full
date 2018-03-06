@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('posts', function(tbl) {
       tbl.increments('id');
       tbl.uuid(userId).references('id').inTable('users');
-      tbl.string('text');
+      tbl.string('longtext');
       tbl.timestamp('created_at').defaultTo(knex.fn.now());
   })
 };
